@@ -1,0 +1,159 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #09131B;
+}
+.muneIcon{
+    width: 30px;
+    height: 20px;
+    padding: 5px 0 0 0;
+    position: fixed;
+    right: 50px;
+    top: 50px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 999;
+}
+.line1 , .line2{
+    width: 30px;
+    height: 2px;
+    display: block;
+    background-color: #CA2052;
+    position: relative;
+}
+.line2{
+    width: 15px;
+    margin-top: 10px;
+    right: -15px;
+}
+@keyframes a1{
+    from{right: 50px;}
+    to{right: 0px;}
+}
+.muneIcon:hover .open .line1{
+    animation: a1 .6s;
+}
+@keyframes a2{
+    from{right: -30px;}
+    to{right: -15px;}
+}
+.muneIcon:hover .open .line2{
+    animation: a2 .6s;
+}
+.close{
+    margin-top: 10px;
+    display: none;
+    z-index: 99999;
+}
+.close .line3,.line4{
+    width: 30px;
+    height: 2px;
+    display: block;
+    background-color: white;
+    position: relative;
+    margin-top: -5px;
+    transform: rotate(45deg);
+}
+.close .line4{
+    margin-top: -2px;
+    transform: rotate(-45deg);
+}
+@keyframes a3{
+    from{width: 0;}
+    to{width: 30px;}
+}
+.muneIcon:hover .close .line3{
+    animation:a3 .5s;
+}
+.muneIcon:hover .close .line4{
+    animation:a3 .7s;
+}
+.main{
+    width: 100%;
+    height: 100vh;
+    background-color: #09131B;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+}
+.menu{
+    width: 300px;
+    position: relative;
+    top: 50%;
+    left: 30%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    text-align: center;
+    z-index: 999;
+}
+.muneItem{
+    display: block;
+    font-family:monospace;
+    font-size: 50px;
+    color: white;
+    letter-spacing: 10px;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+}
+.muneItem:before,.muneItem:after{
+    content: attr(data);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #09131B;
+    //color: white;
+    overflow: hidden;
+}
+.muneItem:hover:before{
+    left: 8px;
+    top: 4px;
+    color: rgb(0, 226, 255);
+    opacity: .5;
+    animation: effect 2s infinite linear;
+}
+.muneItem:hover:after{
+    left: -8px;
+    top: -4px;
+    color: rgb(255, 0, 137);
+    opacity: .5;
+    animation: effect 1s infinite linear;
+}
+
+/*Glitch effect*/
+@keyframes effect{
+    0%{clip:rect(55px,9999px,56px,0);}  
+    5%{clip:rect(47px,9999px,30px,0);}  
+    10%{clip:rect(33px,9999px,36px,0);}  
+    15%{clip:rect(35px,9999px,9px,0);}  
+    20%{clip:rect(63px,9999px,59px,0);}  
+    25%{clip:rect(96px,9999px,98px,0);}  
+    30%{clip:rect(48px,9999px,77px,0);}  
+    35%{clip:rect(50px,9999px,34px,0);}  
+    40%{clip:rect(60px,9999px,72px,0);}  
+    45%{clip:rect(10px,9999px,81px,0);}  
+    50%{clip:rect(2px,9999px,60px,0);}  
+    55%{clip:rect(23px,9999px,89px,0);}  
+    60%{clip:rect(76px,9999px,91px,0);}  
+    65%{clip:rect(62px,9999px,30px,0);}  
+    70%{clip:rect(60px,9999px,73px,0);}  
+    75%{clip:rect(60px,9999px,87px,0);}  
+    80%{clip:rect(2px,9999px,14px,0);}  
+    85%{clip:rect(28px,9999px,87px,0);}  
+    90%{clip:rect(73px,9999px,50px,0);}  
+    95%{clip:rect(79px,9999px,70px,0);}  
+    100%{clip:rect(17px,9999px,79px,0);}  
+}
+#vid{
+    position: absolute;
+    bottom: -25px;
+    right: 0;
+    z-index: 99;
+}
