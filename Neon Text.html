@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neon Text</title>
+</head>
+<style type="text/css">
+    
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: #3A3B4C;
+    }
+    #text{
+        font-family: Pacfont;
+        font-size: 70px;
+        color: #DA3F47;
+        text-align: center;
+        line-height: 85px;
+        letter-spacing: 5px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%,-50%);
+        -o-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        cursor: pointer;
+    }
+    @keyframes neon{
+        0%{
+            opacity: 0;
+        }
+        50%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+        }
+    }
+    #text:before{
+        content: 'DAFT CREATION';
+        background: linear-gradient(#FFC929 10%,#E35C41 35%,#FFC929 40%,#E35C41 65%,#FFC929 70%,#E35C41 95%,#FFC929 100%);
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        text-shadow: 0 0 10px #DA2F47,0 0 25px #DA3F47;
+        animation: neon 1.5s ease infinite .5s;
+    }
+    </style>
+<body>
+    <div id="text">DAFT CREATION</div>
+</body>
+</html>
